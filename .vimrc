@@ -37,7 +37,7 @@ Plug 'wincent/terminus'
 
 call plug#end()
 
-" :g exists even if in goyo
+" :g exits even if in goyo
 function! s:goyo_enter()
   let b:quitting = 0
   let b:quitting_bang = 0
