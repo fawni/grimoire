@@ -10,14 +10,6 @@ pfetch
 # some gpg shit idk
 export GPG_TTY=$(tty)
 
-# libreddit defaults
-export LIBREDDIT_DEFAULT_SHOW_NSFW=on
-export LIBREDDIT_DEFAULT_THEME=rosebox
-export LIBREDDIT_DEFAULT_COMMENT_SORT=top
-export LIBREDDIT_DEFAULT_POST_SORT=top
-export LIBREDDIT_DEFAULT_USE_HLS=on
-export LIBREDDIT_DEFAULT_HIDE_HLS_NOTIFICATION=o
-
 # antigen
 source ~/zsh-stuff/antigen.zsh
 
