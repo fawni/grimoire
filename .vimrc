@@ -15,6 +15,7 @@ endif
 
 " Plugins
 call plug#begin('~/.vim/plugged')
+
 Plug 'easymotion/vim-easymotion'
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-commentary'
@@ -25,15 +26,20 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/seoul256.vim'
+Plug 'valloric/youcompleteme'
+
 call plug#end()
+
+" Mappings
+map <Leader>l :Limelight!!<CR>
+map <Leader>g :Goyo<CR>
+map <Leader>z :Goyo<CR> :Limelight!!<CR>
 
 colo seoul256
 let g:airline_theme='seoul256'
 syntax on
 set autoindent
 set smartindent  
-" ================ Search Settings  ================= "
-
 set incsearch  " Highlight as you search
 set hlsearch   " Highlight the current search
 set ignorecase " Make search case insensitive...
