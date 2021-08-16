@@ -34,6 +34,10 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'wincent/terminus'
+Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -66,6 +70,8 @@ nnoremap <silent> <Leader>z :Goyo<CR> :Limelight!!<CR>
 nmap <silent> <leader>cc gcc
 nmap <silent> <leader>w :w!<cr>
 nmap <silent> <leader>q :q<cr>
+nmap <silent> ; :Files<CR>
+nmap <silent> <leader>e :NERDTreeToggle<CR>
 
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)

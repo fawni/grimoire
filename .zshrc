@@ -15,7 +15,7 @@ source ~/zsh-stuff/antigen.zsh
 
 antigen use oh-my-zsh
 
-antigen theme obscurity/gallois
+antigen theme https://git.x4.pm/obscurity/gallois
 
 antigen bundle git
 antigen bundle sudo
@@ -41,5 +41,7 @@ alias stop="sudo systemctl stop"
 alias logs="sudo journalctl -u"
 alias fd="fdfind"
 alias install="sudo apt install -y"
+alias update="sudo apt update -y"
+alias upgrade="sudo apt upgrade -y"
 alias svim="sudo -E vim"
 alias dotfiles='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
