@@ -6,6 +6,10 @@ let mapleader = " "
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
 
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+
 " Automatic vim-plug installation
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -26,17 +30,25 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/seoul256.vim'
-Plug 'valloric/youcompleteme'
+Plug 'wincent/terminus'
 
 call plug#end()
 
 " Mappings
-map <Leader>l :Limelight!!<CR>
-map <Leader>g :Goyo<CR>
-map <Leader>z :Goyo<CR> :Limelight!!<CR>
+nnoremap <silent> <Leader>l :Limelight!!<CR>
+nnoremap <silent> <Leader>g :Goyo<CR>
+nnoremap <silent> <Leader>z :Goyo<CR> :Limelight!!<CR>
+nmap <silent> <leader>cc gcc
+nmap <silent> <leader>w :w!<cr>
+nmap <silent> <leader>q :q<cr>
+
+" :W sudo saves the file 
+" (useful for handling the permission-denied error)
+command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
 colo seoul256
 let g:airline_theme='seoul256'
+let g:airline_powerline_fonts = 1
 syntax on
 set autoindent
 set smartindent  
@@ -44,12 +56,18 @@ set incsearch  " Highlight as you search
 set hlsearch   " Highlight the current search
 set ignorecase " Make search case insensitive...
 set smartcase  " ... except when we use uppercase letters
+set incsearch
+set lazyredraw
+set showmatch
 
 " Show file stats
 set ruler
 
-" Blink cursor on error instead of beeping (grr)
-set visualbell
+" No annoying error bills
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
 
 " Encoding
 set encoding=utf-8
@@ -58,11 +76,17 @@ set encoding=utf-8
 set wrap
 set textwidth=79
 set formatoptions=tcqrn1
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
 set noshiftround
+
+" Use spaces instead of tabs
+set expandtab
+
+" Be smart when using tabs ;)
+set smarttab
+
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
 
 " Allow hidden buffers
 set hidden
@@ -76,3 +100,8 @@ set laststatus=2
 " Last line
 set showmode
 set showcmd
+
+" no backup
+set nobackup
+set nowb
+set noswapfile
