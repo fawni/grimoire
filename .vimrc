@@ -131,7 +131,10 @@ set laststatus=2
 set showmode
 set showcmd
 
-" no backup
+" No backup
 set nobackup
 set nowb
-" set noswapfile
+set noswapfile
+
+# Make the backspace function normally
+set backspace=indent,eol,start

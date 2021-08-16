@@ -16,6 +16,18 @@ pfetch
 # Some gpg stuff idk
 export GPG_TTY=$(tty)
 
+# Better commands history
+export HISTFILE=~/.histfile
+export HISTSIZE=1000000   # the number of items for the internal history list
+export SAVEHIST=1000000   # maximum number of items for the history file
+
+# The meaning of these options can be found in man page of `zshoptions`.
+setopt HIST_IGNORE_ALL_DUPS  # do not put duplicated command into history list
+setopt HIST_SAVE_NO_DUPS  # do not save duplicated command
+setopt HIST_REDUCE_BLANKS  # remove unnecessary blanks
+setopt INC_APPEND_HISTORY_TIME  # append command to history file immediately after execution
+setopt EXTENDED_HISTORY  # record command start time
+
 # Aliases
 alias cd..="cd .."
 alias ls="exa -aFx --icons"
@@ -69,10 +81,12 @@ zinit snippet OMZP::thefuck
 
 # Plugins
 zinit ice wait'0' lucid
-zinit light zsh-users/zsh-syntax-highlighting
+zinit light zdharma/fast-syntax-highlighting
 zinit ice wait'0' lucid
 zinit light zsh-users/zsh-completions
 zinit ice wait'0' lucid
 zinit light zsh-users/zsh-autosuggestions
 zinit ice wait'0' lucid
 zinit light zsh-users/zsh-history-substring-search
+zinit ice wait'0' lucid
+zinit light zdharma/history-search-multi-word
