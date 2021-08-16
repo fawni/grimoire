@@ -42,4 +42,4 @@ alias logs="sudo journalctl -u"
 alias fd="fdfind"
 alias install="sudo apt install -y"
 alias svim="sudo -E vim"
-alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias dotfiles='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
