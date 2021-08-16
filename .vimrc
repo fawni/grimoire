@@ -136,5 +136,5 @@ set nobackup
 set nowb
 set noswapfile
 
-# Make the backspace function normally
+" Make the backspace function normally
 set backspace=indent,eol,start
