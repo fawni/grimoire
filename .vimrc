@@ -6,7 +6,10 @@ let mapleader = " "
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
 
+syntax on
+
 " Enable filetype plugins
+filetype on
 filetype plugin on
 filetype indent on
 
@@ -34,6 +37,28 @@ Plug 'wincent/terminus'
 
 call plug#end()
 
+" :g exists even if in goyo
+function! s:goyo_enter()
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  autocmd QuitPre <buffer> let b:quitting = 1
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+endfunction
+
+function! s:goyo_leave()
+  " Quit Vim if this is the only remaining buffer
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+endfunction
+
+autocmd! User GoyoEnter call <SID>goyo_enter()
+autocmd! User GoyoLeave call <SID>goyo_leave()
+
 " Mappings
 nnoremap <silent> <Leader>l :Limelight!!<CR>
 nnoremap <silent> <Leader>g :Goyo<CR>
@@ -49,7 +74,6 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 colo seoul256
 let g:airline_theme='seoul256'
 let g:airline_powerline_fonts = 1
-syntax on
 set autoindent
 set smartindent  
 set incsearch  " Highlight as you search
@@ -104,4 +128,4 @@ set showcmd
 " no backup
 set nobackup
 set nowb
-set noswapfile
+" set noswapfile
