@@ -1,9 +1,5 @@
-# omz is just better at handling themes
-export ZSH="/home/obscurity/.oh-my-zsh"
-
-ZSH_THEME="gallois"
-
-source $ZSH/oh-my-zsh.sh
+# Colors for prompt
+autoload -U colors && colors
 
 # Pfetch config
 export PF_INFO="title os kernel uptime pkgs memory shell editor palette"
@@ -11,13 +7,16 @@ export PF_COL1="1"
 export PF_COL2="8"
 export PF_COL3="2"
 
+# Set vim as default editor
+export EDITOR="vim"
+
 # Startup commands
 pfetch
 
-# some gpg shit idk
+# Some gpg stuff idk
 export GPG_TTY=$(tty)
 
-# aliases
+# Aliases
 alias cd..="cd .."
 alias ls="exa -aFx --icons"
 alias la="exa -laFx --icons"
@@ -29,24 +28,51 @@ alias restart="sudo systemctl restart"
 alias start="sudo systemctl start"
 alias stop="sudo systemctl stop"
 alias logs="sudo journalctl -u"
-alias fd="fdfind"
+alias fd="fdfind -H"
 alias install="sudo apt install -y"
 alias update="sudo apt update -y"
 alias upgrade="sudo apt upgrade -y"
 alias svim="sudo -E vim"
 alias dotfiles='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
-# Antigen
-source ~/zsh-stuff/antigen.zsh
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
 
-antigen use oh-my-zsh
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit's installer chunk
 
-antigen bundle git
-antigen bundle sudo
-antigen bundle thefuck
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle zsh-users/zsh-autosuggestions
+## Zinit
 
-antigen apply
+# Prompt theme
+setopt promptsubst
+
+zinit ice from'git.x4.pm' wait'!0'
+zinit light obscurity/gallois
+
+# Omz libs
+zinit ice wait'0' lucid
+zinit snippet OMZL::git.zsh
+
+# Omz plugins
+zinit ice wait'0' lucid
+zinit snippet OMZP::git
+zinit ice wait'0' lucid
+zinit snippet OMZP::thefuck
+
+# Plugins
+zinit ice wait'0' lucid
+zinit light zsh-users/zsh-syntax-highlighting
+zinit ice wait'0' lucid
+zinit light zsh-users/zsh-completions
+zinit ice wait'0' lucid
+zinit light zsh-users/zsh-autosuggestions
+zinit ice wait'0' lucid
+zinit light zsh-users/zsh-history-substring-search
