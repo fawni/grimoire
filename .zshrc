@@ -1,3 +1,6 @@
+# Source profile
+source ~/.profile
+
 # Colors for prompt
 autoload -U colors && colors
 
@@ -72,12 +75,24 @@ zinit light obscurity/gallois
 # Omz libs
 zinit ice wait'0' lucid
 zinit snippet OMZL::git.zsh
+zinit ice wait'0' lucid
+zinit snippet OMZL::completion.zsh
 
 # Omz plugins
 zinit ice wait'0' lucid
 zinit snippet OMZP::git
 zinit ice wait'0' lucid
 zinit snippet OMZP::thefuck
+zinit ice wait'0' as'completion' lucid
+zinit snippet OMZ::plugins/docker/_docker
+zinit ice wait'0' as'completion' lucid
+zinit snippet OMZ::plugins/docker-compose/_docker-compose
+zinit ice wait'0' lucid
+zinit snippet OMZP::docker-compose
+
+# auto-completion
+autoload -Uz compinit
+compinit
 
 # Plugins
 zinit ice wait'0' lucid
