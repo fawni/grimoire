@@ -35,8 +35,9 @@ setopt EXTENDED_HISTORY  # record command start time
 alias cd..="cd .."
 alias ls="exa -aFx --icons"
 alias la="exa -laFx --icons"
-alias zshrc="vim ~/.zshrc"
+alias gallois="vim ~/.zinit/plugins/obscurity---gallois/gallois.zsh-theme"
 alias vimrc="vim ~/.vimrc"
+alias zshrc="vim ~/.zshrc"
 alias src="source ~/.zshrc"
 alias reload="sudo systemctl reload"
 alias restart="sudo systemctl restart"
@@ -72,6 +73,18 @@ setopt promptsubst
 zinit ice from'git.x4.pm' wait'!0'
 zinit light obscurity/gallois
 
+# Plugins
+zinit ice wait'0' lucid
+zinit light zdharma/fast-syntax-highlighting
+zinit ice wait'!0' lucid
+zinit light zsh-users/zsh-history-substring-search
+zinit ice wait'0' lucid
+zinit light zsh-users/zsh-completions
+zinit ice wait'0' lucid
+zinit light zsh-users/zsh-autosuggestions
+zinit ice wait'0' lucid
+zinit light zdharma/history-search-multi-word
+
 # Omz libs
 zinit ice wait'0' lucid
 zinit snippet OMZL::git.zsh
@@ -93,15 +106,3 @@ zinit snippet OMZP::docker-compose
 # auto-completion
 autoload -Uz compinit
 compinit
-
-# Plugins
-zinit ice wait'0' lucid
-zinit light zdharma/fast-syntax-highlighting
-zinit ice wait'0' lucid
-zinit light zsh-users/zsh-completions
-zinit ice wait'0' lucid
-zinit light zsh-users/zsh-autosuggestions
-zinit ice wait'0' lucid
-zinit light zsh-users/zsh-history-substring-search
-zinit ice wait'0' lucid
-zinit light zdharma/history-search-multi-word

@@ -70,7 +70,6 @@ nnoremap <silent> <Leader>z :Goyo<CR> :Limelight!!<CR>
 nmap <silent> <leader>cc gcc
 nmap <silent> <leader>w :w!<cr>
 nmap <silent> <leader>q :q<cr>
-nmap <silent> ; :Files<CR>
 nmap <silent> <leader>e :NERDTreeToggle<CR>
 
 " :W sudo saves the file 
