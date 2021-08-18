@@ -35,6 +35,7 @@ setopt EXTENDED_HISTORY  # record command start time
 alias cd..="cd .."
 alias ls="exa -aFx --icons"
 alias la="exa -laFx --icons"
+alias exa="exa -Fx --icons"
 alias gallois="vim ~/.zinit/plugins/obscurity---gallois/gallois.zsh-theme"
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc"
@@ -74,33 +75,33 @@ zinit ice from'git.x4.pm' wait'!0'
 zinit light obscurity/gallois
 
 # Plugins
-zinit ice wait'0' lucid
-zinit light zdharma/fast-syntax-highlighting
-zinit ice wait'!0' lucid
+zinit ice wait lucid
 zinit light zsh-users/zsh-history-substring-search
-zinit ice wait'0' lucid
+zinit ice wait lucid
+zinit light zdharma/fast-syntax-highlighting
+zinit ice wait lucid
 zinit light zsh-users/zsh-completions
-zinit ice wait'0' lucid
+zinit ice wait lucid
 zinit light zsh-users/zsh-autosuggestions
-zinit ice wait'0' lucid
+zinit ice wait lucid
 zinit light zdharma/history-search-multi-word
 
 # Omz libs
-zinit ice wait'0' lucid
+zinit ice wait lucid
 zinit snippet OMZL::git.zsh
-zinit ice wait'0' lucid
+zinit ice wait lucid
 zinit snippet OMZL::completion.zsh
 
 # Omz plugins
-zinit ice wait'0' lucid
+zinit ice wait lucid
 zinit snippet OMZP::git
-zinit ice wait'0' lucid
+zinit ice wait lucid
 zinit snippet OMZP::thefuck
-zinit ice wait'0' as'completion' lucid
+zinit ice wait as'completion' lucid
 zinit snippet OMZ::plugins/docker/_docker
-zinit ice wait'0' as'completion' lucid
+zinit ice wait as'completion' lucid
 zinit snippet OMZ::plugins/docker-compose/_docker-compose
-zinit ice wait'0' lucid
+zinit ice wait lucid
 zinit snippet OMZP::docker-compose
 
 # auto-completion
