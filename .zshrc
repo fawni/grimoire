@@ -33,9 +33,9 @@ setopt EXTENDED_HISTORY  # record command start time
 
 # Aliases
 alias cd..="cd .."
-alias ls="exa -aFx --icons"
-alias la="exa -laFx --icons"
-alias exa="exa -Fx --icons"
+alias ls="exa -aFx --icons  --group-directories-first"
+alias la="exa -laFx --icons  --group-directories-first"
+alias exa="exa -Fx --icons  --group-directories-first"
 alias gal="vim ~/.zinit/plugins/obscurity---gal/gal.zsh-theme"
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc"
@@ -52,6 +52,7 @@ alias upgrade="sudo apt upgrade -y"
 alias svim="sudo -E vim"
 alias dotfiles="git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 alias sysctl="sudo systemctl"
+alias pip="pip3"
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
