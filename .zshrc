@@ -36,7 +36,6 @@ alias cd..="cd .."
 alias ls="exa -aFx --icons  --group-directories-first"
 alias la="exa -laFx --icons  --group-directories-first"
 alias exa="exa -Fx --icons  --group-directories-first"
-alias gal="vim ~/.zinit/plugins/obscurity---gal/gal.zsh-theme"
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc"
 alias src="source ~/.zshrc"
@@ -46,19 +45,19 @@ alias start="sudo systemctl start"
 alias stop="sudo systemctl stop"
 alias logs="sudo journalctl -u"
 alias fd="fdfind -H"
+alias bat="batcat"
 alias install="sudo apt install -y"
 alias update="sudo apt update -y"
 alias upgrade="sudo apt upgrade -y"
 alias svim="sudo -E vim"
 alias dotfiles="git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 alias sysctl="sudo systemctl"
-alias pip="pip3"
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
     command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.zinit/bin" && \
         print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
@@ -73,20 +72,20 @@ autoload -Uz _zinit
 # Prompt theme
 setopt promptsubst
 
-zinit ice from'git.x4.pm' wait'!0'
-zinit light obscurity/gal
+zinit ice wait'!0'
+zinit light x6r/gal
 
 # Plugins
 zinit ice wait lucid
 zinit light zsh-users/zsh-history-substring-search
 zinit ice wait lucid
-zinit light zdharma/fast-syntax-highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice wait lucid
 zinit light zsh-users/zsh-completions
 zinit ice wait lucid
 zinit light zsh-users/zsh-autosuggestions
 zinit ice wait lucid
-zinit light zdharma/history-search-multi-word
+zinit light zdharma-continuum/history-search-multi-word
 
 # Omz libs
 zinit ice wait lucid
