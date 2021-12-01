@@ -50,7 +50,7 @@ alias install="sudo apt install -y"
 alias update="sudo apt update -y"
 alias upgrade="sudo apt upgrade -y"
 alias svim="sudo -E vim"
-alias dotfiles="git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
+alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias sysctl="sudo systemctl"
 
 ### Added by Zinit's installer
