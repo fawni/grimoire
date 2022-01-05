@@ -86,8 +86,8 @@ zinit ice wait lucid
 zinit light zsh-users/zsh-completions
 zinit ice wait lucid
 zinit light zsh-users/zsh-autosuggestions
-zinit ice wait lucid
-zinit light zdharma-continuum/history-search-multi-word
+# zinit ice wait lucid
+# zinit light zdharma-continuum/history-search-multi-word
 
 # Omz libs
 zinit ice wait lucid
@@ -100,12 +100,21 @@ zinit ice wait lucid
 zinit snippet OMZP::git
 zinit ice wait lucid
 zinit snippet OMZP::thefuck
+zinit ice wait lucid
+zinit snippet OMZP::sudo
+zinit ice wait lucid
+zinit snippet OMZP::command-not-found
 zinit ice wait as'completion' lucid
 zinit snippet OMZ::plugins/docker/_docker
 zinit ice wait as'completion' lucid
 zinit snippet OMZ::plugins/docker-compose/_docker-compose
 zinit ice wait lucid
 zinit snippet OMZP::docker-compose
+
+# Atuin
+export ATUIN_NOBIND="true"
+zinit light ellie/atuin
+bindkey '^r' _atuin_search_widget
 
 # auto-completion
 autoload -Uz compinit

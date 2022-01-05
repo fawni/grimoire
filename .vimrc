@@ -38,6 +38,8 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'isobit/vim-caddyfile'
 
 call plug#end()
 
@@ -76,6 +78,7 @@ nmap <silent> <leader>e :NERDTreeToggle<CR>
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
+let g:seoul256_background = 239
 colo seoul256
 let g:airline_theme='seoul256'
 let g:airline_powerline_fonts = 1
