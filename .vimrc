@@ -1,6 +1,7 @@
 set nocompatible
 set rnu
-set number
+set nu
+
 let mapleader = " "
 
 " Helps force plugins to load correctly when it is turned back on below
@@ -40,6 +41,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'isobit/vim-caddyfile'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
