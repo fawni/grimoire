@@ -1,0 +1,4 @@
+.vscode/
+watch_later/
+*.exe
+script-opts/discord.conf
